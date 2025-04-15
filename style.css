@@ -10,6 +10,7 @@ html {
     background-color: #f5f0de;
     font-family: Chicken Noodle Soup, Arial, Helvetica, sans-serif;
     scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
 }
 
 *::selection {
@@ -57,12 +58,20 @@ img {
     object-fit: cover;
 }
 
+.sticker {
+    width: 100px;
+    position: absolute;
+}
+
 /* =======================================HEADER======================================= */
 
-.logo-section {
+.nav-bar {
     padding: 20px;
-    position: sticky;
     top: 0;
+    background-color: #22242858;
+    position: fixed;
+    z-index: 2;
+    transition: all .15s;
     
     /* text-align: center;
     position: absolute;
@@ -72,18 +81,42 @@ img {
     width: 1140px; */
 }
 
+.nav-bar:hover {
+    background-color: #222428da;
+}
+
+.nav {
+    color: whitesmoke;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(95%, 110%);
+}
+
+.nav a {
+    color: whitesmoke;
+    font-size: 27px;
+    padding-left: 40px;
+    transition: all .1s;
+}
+
+.nav a:hover {
+    text-shadow: 0px 0px 3px rgb(255, 255, 255, 0.8);
+}
+
 .logo-img {
     display: inline;
-    width: 4%;
+    width: 3.5%;
 }
 
 .name {
     display: inline;
     font-family: 'Winky Sans', Arial, Helvetica, sans-serif;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
     color: whitesmoke;
-    margin-left: 15px;
+    padding-left: 15px;
+    padding-top: 27px;
     position: absolute;
     top: 5%;
 }
@@ -120,12 +153,15 @@ header{
 
 /* =======================================ABOUT======================================== */
 
+.about {
+    position: relative;
+}
+
 .about .content {
     display: grid;
     grid-template-columns: 600px 1fr;
     column-gap: 40px;
     height: 100vh;
-    scroll-snap-align: start;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -161,7 +197,7 @@ header{
     padding-top: 230px;
 }
 
-.about img {
+.about .content img {
     /* border: 18px solid #f5f5f4;
     border-bottom: 90px solid #f5f5f4; */
 
@@ -169,6 +205,21 @@ header{
     mask-size: cover;
     mask-position: center;
     margin-top: 50px;
+}
+
+.about .sticker.s1 {
+    top: 20px;
+    left: 930px;
+}
+
+.about .sticker.s2 {
+    top: 1320px;
+    left: 1350px;
+}
+
+.about .sticker.s3 {
+    top: 2070px;
+    left: 100px;
 }
 
 /* ====================================ACTIVITIES====================================== */
@@ -276,6 +327,7 @@ header{
 
 .activity.a1 {
     background-color: #cb3697;
+    z-index: 1;
 }
 
 .activity.a1 .title {
@@ -313,6 +365,7 @@ header{
     color: #dc9c9e;
     font-family: Dancing Script;
     font-size: 70px;
+    font-weight: 600;
     text-align: center;
     padding-bottom: 20px;
 }
@@ -326,16 +379,32 @@ header{
     object-position: 0 -40px;
 }
 
+.activity.a3 {
+    background-color: #fae6e7;
+}
+
+.activity.a3 .title {
+    color: #d85086;
+    font-size: 70px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.activity.a3 .info {
+    color: #d85086;
+}
+
 /* ======================================SIGNUP======================================== */
 
 .signup {
     margin-left: 200px;
     margin-right: 200px;
+    position: relative;
 }
 
 form {
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
 }
 
 label {
@@ -386,6 +455,18 @@ input[type=submit]:active {
     transition: all .15s;
 }
 
+.signup .sticker.s1 {
+    width: 130px;
+    top: 30px;
+    left: 930px;
+}
+
+.signup .sticker.s2 {
+    width: 140px;
+    top: 30px;
+    left: 50px;
+}
+
 /* =====================================FOOTER========================================= */
 
 footer{
@@ -398,11 +479,15 @@ footer{
 
 footer .credit {
     text-align: center;
-    padding-top: 100px;
+    padding-top: 65px;
 }
 
 footer .title {
     font-size: 30px;
+}
+
+footer .member {
+    font-size: 23px;
 }
 
 /* ==================================================================================== */
